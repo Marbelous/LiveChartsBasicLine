@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Media;
 using LiveCharts;
 using LiveCharts.Wpf;
 
 namespace Wpf.CartesianChart.PointShapeLine
 {
-    public partial class PointShapeLineExample : UserControl
+    public partial class PointShapeLineExample : Window
     {
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
@@ -71,6 +72,11 @@ namespace Wpf.CartesianChart.PointShapeLine
         private void ResetBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             InitChart();
+        }
+
+        private void WrapPanel_Click(object sender, RoutedEventArgs e)
+        {
+            StatusTxtBlk.Text = "Click event bubbled to WrapPanel.";
         }
     }
 }
